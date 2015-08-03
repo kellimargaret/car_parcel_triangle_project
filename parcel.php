@@ -74,12 +74,18 @@
     <div class="container">
         <h1>Shipping cost:</h1>
         <?php
-            echo "<p> Length: " . $shoes->getLength() . " inches.</p>";
-            echo "<p> Width: " . $shoes->getWidth() . " inches. </p>";
-            echo "<p> Height: " . $shoes->getHeight() . " inches. </p>";
-            echo "<p> Weight: " . $shoes->getWeight() . " pounds. </p>";
-            echo "<p> Volume: " . $shoes->volume() . " cubed inches. </p>";
-            echo "<p> Cost to ship: $" . $shoes->costToShip() . "</p>"
+            if ((empty($shoes->getLength()) || empty($shoes->getWidth())) || (empty($shoes->getHeight()) || empty($shoes->getWeight())))
+            {
+                echo "<p>Please complete empty fields.</p>";
+            } else {
+                echo "<p> Length: " . $shoes->getLength() . " inches.</p>";
+                echo "<p> Width: " . $shoes->getWidth() . " inches. </p>";
+                echo "<p> Height: " . $shoes->getHeight() . " inches. </p>";
+                echo "<p> Weight: " . $shoes->getWeight() . " pounds. </p>";
+                echo "<p> Volume: " . $shoes->volume() . " cubed inches. </p>";
+                echo "<p> Cost to ship: $" . $shoes->costToShip() . "</p>";
+            }
+
         ?>
     </div>
 </body>
