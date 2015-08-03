@@ -57,7 +57,7 @@
 
     $cars_matching_search = array();
     foreach ($cars as $car) {
-        if ($car->getPrice() < $_GET["price"]) {
+        if (($car->getPrice() < $_GET["price"]) && ($car->getMiles() < $_GET["mile"])) {
             array_push($cars_matching_search, $car);
         }
     }
@@ -67,6 +67,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
     <title>Your Car Dealership</title>
 </head>
 <body>
@@ -78,13 +79,16 @@
                 $model = $car->getMakeModel();
                 $price = $car->getPrice();
                 $miles = $car->getMiles();
-                echo "<li> <img src='$image'> </li>";
+                echo "<li> <div class='cars'><img src='$image'></div> </li>";
                 echo "<li> $model </li>";
                 echo "<ul>";
                     echo "<li> $$price </li>";
                     echo "<li>Miles: $miles </li>";
                 echo "</ul>";
+            }
 
+            if (empty($cars_matching_search)) {
+                echo "<p>No cars matching search.</p>";
             }
         ?>
     </ul>
