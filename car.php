@@ -46,6 +46,8 @@
         {
             $this->image = $image;
         }
+
+      
     }
 
     $porsche = new Car("img/porsche.jpg", "2014 Porsche 911", 114991);
