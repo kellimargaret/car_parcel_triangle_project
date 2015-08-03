@@ -51,6 +51,10 @@
         {
             return (($this->length * $this->width) * $this->height);
         }
+        function costToShip()
+        {
+            return (($this->height + $this->width) + ($this->length + $this->weight));
+        }
 
     }
 
@@ -75,6 +79,7 @@
             echo "<p> Height: " . $shoes->getHeight() . " inches. </p>";
             echo "<p> Weight: " . $shoes->getWeight() . " pounds. </p>";
             echo "<p> Volume: " . $shoes->volume() . " cubed inches. </p>";
+            echo "<p> Cost to ship: $" . $shoes->costToShip() . "</p>"
         ?>
     </div>
 </body>
