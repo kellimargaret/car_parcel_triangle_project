@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <title>Parcel Form</title>
+<body>
+  <div class="container">
+    <h1>What would you like to ship today?</h1>
+    <form action="parcel.php">
+      <div class="form-group">
+        <label for="length">Length (inches)</label>
+        <input id="length" name="length" type="number" class="form-control">
+
+        <label for="width">Width (inches)</label>
+        <input id="width" name="width" type="number" class="form-control">
+
+        <label for="height">Height (inches)</label>
+        <input id="height" name="height" type="number" class="form-control">
+
+        <label for="weight">Weight (lbs)</label>
+        <input id="weight" name="weight" type="number" class="form-control">
+      </div>
+      <button type="submit" class="btn-primary">Submit</button>
+    </form>
+  </div>
+</body>
+</head>
+</html>
